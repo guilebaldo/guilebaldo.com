@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Guilebaldo</title>
+  <meta name="description" content="Selected software projects by Guilebaldo: Barriando tourism platform, Soil Force service business site, and more.">
+  <link rel="canonical" href="https://guilebaldo.com/portafolio/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <a class="nav-brand" href="/">Guilebaldo<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="/#services">Services</a>
+      <a class="is-active" href="/portafolio/">Portfolio</a>
+      <a href="/resume/">Resume</a>
+      <a class="nav-cta" href="/#start">Start a project</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="eyebrow reveal">Portfolio</div>
+        <h1 class="section-title reveal">Products shipped for real operators.</h1>
+        <p class="section-lead reveal">Live digital products across tourism and local services — with more projects added as they go to market.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px">
+      <div class="wrap project-stack">
+
+        <article class="project reveal" id="barriando">
+          <div class="project-media">
+            <div class="label">Barriando</div>
+          </div>
+          <div class="project-body">
+            <div class="tag">Tourism · Digital platform</div>
+            <h2>Barriando — Puebla Tourist Cluster</h2>
+            <p>
+              End-to-end digital infrastructure for Puebla’s historic-center tourism ecosystem:
+              the official web hub, MAP (Museo Abierto de Puebla), and engagement products that
+              connect visitors with local businesses.
+            </p>
+            <div class="project-results">
+              <span>Official cluster website</span>
+              <span>MAP open museum product</span>
+              <span>Visitor engagement tools</span>
+            </div>
+            <div class="project-links">
+              <a class="btn btn-primary" href="https://barriando.org" target="_blank" rel="noopener">Visit barriando.org</a>
+              <a class="btn btn-ghost" href="https://www.barriandopuebla.com/map" target="_blank" rel="noopener">Open MAP</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal" id="soil-force">
+          <div class="project-media">
+            <div class="label">Soil Force</div>
+          </div>
+          <div class="project-body">
+            <div class="tag">Local services · Growth site</div>
+            <h2>Soil Force — Organic Lawn Care</h2>
+            <p>
+              Conversion-focused web product for a San Antonio organic lawn care business:
+              clear offer, trust signals, estimate booking, and a path toward satellite-assisted
+              property quoting.
+            </p>
+            <div class="project-results">
+              <span>Lead-gen homepage</span>
+              <span>Service funnels</span>
+              <span>Estimate CTA system</span>
+            </div>
+            <div class="project-links">
+              <a class="btn btn-primary" href="https://soil-force.com" target="_blank" rel="noopener">Visit soil-force.com</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap reveal">
+        <div class="eyebrow" style="justify-content:center">Next project</div>
+        <h2 class="section-title">Want your product featured here next?</h2>
+        <p class="section-lead">Tell us what you’re building. We’ll reply with a scope path and a realistic ship date.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/522222554936?text=Hi%20Guilebaldo%20—%20I%20want%20to%20start%20a%20software%20project" target="_blank" rel="noopener">Start a project</a>
+          <a class="btn btn-ghost" href="/">Back to studio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="/">Guilebaldo</a>
+    <nav>
+      <a href="/portafolio/">Portfolio</a>
+      <a href="/resume/">Resume</a>
+      <a href="mailto:guilebaldoruiz@gmail.com">Email</a>
+      <a href="https://wa.me/522222554936" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+    <span>© <span id="y"></span> Guilebaldo</span>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const toggle = document.getElementById("navToggle");
+    const links = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => links.classList.toggle("open"));
+    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
