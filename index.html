@@ -3,881 +3,266 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guilebaldo Ruiz Reyes — Product Manager</title>
+  <title>Guilebaldo — Software that ships and converts</title>
+  <meta name="description" content="Guilebaldo builds AI products, MVPs, and custom software for founders and operators who need results fast. Book a project call today.">
+  <meta property="og:title" content="Guilebaldo — Software that ships and converts">
+  <meta property="og:description" content="AI agents, SaaS MVPs, and custom digital products — designed to win customers and grow revenue.">
+  <meta property="og:url" content="https://guilebaldo.com">
+  <link rel="canonical" href="https://guilebaldo.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink:    #0d0d0d;
-      --slate:  #1c2b3a;
-      --accent: #e8562a;
-      --gold:   #c9963b;
-      --mist:   #f4f1ec;
-      --white:  #ffffff;
-      --border: rgba(0,0,0,0.09);
-    }
-
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--mist);
-      color: var(--ink);
-      overflow-x: hidden;
-    }
-
-    /* ── NOISE TEXTURE OVERLAY ─────────────────── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.4;
-    }
-
-    /* ── NAV ───────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px;
-      height: 68px;
-      background: rgba(244,241,236,0.85);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink);
-      text-decoration: none;
-      opacity: 0.65;
-      transition: opacity 0.2s;
-    }
-    .nav-links a:hover { opacity: 1; }
-
-    /* ── HERO ──────────────────────────────────── */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 68px;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 60px 80px 80px;
-      position: relative;
-    }
-
-    .hero-left::after {
-      content: '';
-      position: absolute; right: 0; top: 10%; bottom: 10%;
-      width: 1px; background: var(--border);
-    }
-
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 28px;
-    }
-    .hero-tag::before {
-      content: '';
-      width: 28px; height: 2px;
-      background: var(--accent);
-    }
-
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 5vw, 5.2rem);
-      font-weight: 900;
-      line-height: 1.0;
-      color: var(--slate);
-      margin-bottom: 24px;
-    }
-
-    .hero-name em {
-      font-style: normal;
-      color: var(--accent);
-    }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: #445566;
-      max-width: 480px;
-      margin-bottom: 44px;
-    }
-
-    .hero-cta-group { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-
-    .btn-primary {
-      display: inline-block;
-      padding: 14px 32px;
-      background: var(--slate);
-      color: var(--white);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
-
-    .btn-ghost {
-      display: inline-block;
-      padding: 13px 32px;
-      border: 1.5px solid var(--ink);
-      color: var(--ink);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      transition: all 0.2s;
-    }
-    .btn-ghost:hover { background: var(--ink); color: var(--white); }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 80px 80px 80px 60px;
-      gap: 40px;
-    }
-
-    .profile-frame {
-      position: relative;
-      width: 280px; height: 280px;
-    }
-
-    .profile-frame::before {
-      content: '';
-      position: absolute;
-      inset: -12px;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
-      opacity: 0.4;
-    }
-
-    .profile-frame::after {
-      content: '';
-      position: absolute;
-      top: -6px; left: -6px; right: -6px; bottom: -6px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      opacity: 0.3;
-    }
-
-    .profile-img {
-      width: 280px; height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      border: 4px solid var(--white);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-      display: block;
-      background: #ddd;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      width: 100%;
-      max-width: 320px;
-    }
-
-    .stat-box {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 20px 18px;
-      border-radius: 4px;
-      text-align: center;
-    }
-    .stat-box .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--slate);
-      line-height: 1;
-    }
-    .stat-box .num span { color: var(--accent); }
-    .stat-box .lbl {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #889;
-      margin-top: 6px;
-    }
-
-    /* ── MARQUEE STRIP ─────────────────────────── */
-    .marquee-strip {
-      overflow: hidden;
-      background: var(--slate);
-      padding: 16px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .marquee-track {
-      display: flex;
-      gap: 0;
-      animation: marquee 22s linear infinite;
-      white-space: nowrap;
-    }
-    .marquee-track span {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      padding: 0 40px;
-    }
-    .marquee-track span.dot { color: var(--accent); padding: 0 10px; }
-    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-    /* ── SECTIONS SHARED ──────────────────────── */
-    .section {
-      padding: 100px 80px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--slate);
-      margin-bottom: 60px;
-    }
-
-    /* ── ABOUT ─────────────────────────────────── */
-    #about { background: var(--white); max-width: 100%; padding: 0; }
-    .about-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 100px 80px;
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-text { font-size: 1.08rem; font-weight: 300; line-height: 1.85; color: #445; }
-    .about-text p + p { margin-top: 20px; }
-    .about-text strong { font-weight: 600; color: var(--slate); }
-
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .skill-pill {
-      background: var(--mist);
-      border: 1px solid var(--border);
-      padding: 10px 14px;
-      border-radius: 3px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--slate);
-      display: flex; align-items: center; gap: 8px;
-    }
-    .skill-pill::before { content: '▸'; color: var(--accent); font-size: 0.65rem; }
-
-    /* ── EXPERIENCE ────────────────────────────── */
-    #experience { background: var(--mist); max-width: 100%; padding: 0; }
-    .exp-inner { max-width: 1200px; margin: 0 auto; padding: 100px 80px; }
-
-    .timeline { position: relative; padding-left: 28px; }
-    .timeline::before {
-      content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
-      width: 1px; background: var(--border);
-    }
-
-    .exp-item { position: relative; margin-bottom: 60px; }
-    .exp-item::before {
-      content: ''; position: absolute; left: -32px; top: 8px;
-      width: 9px; height: 9px; border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px var(--mist), 0 0 0 5px var(--accent);
-    }
-
-    .exp-meta {
-      display: flex; align-items: baseline; justify-content: space-between;
-      flex-wrap: wrap; gap: 8px; margin-bottom: 6px;
-    }
-    .exp-role {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem; font-weight: 700;
-      color: var(--slate);
-    }
-    .exp-period {
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent);
-      background: rgba(232,86,42,0.08);
-      padding: 4px 10px; border-radius: 2px;
-    }
-    .exp-company {
-      font-size: 0.88rem; font-weight: 500;
-      color: #667; margin-bottom: 18px;
-    }
-    .exp-bullets { list-style: none; }
-    .exp-bullets li {
-      font-size: 0.93rem; font-weight: 300; line-height: 1.7;
-      color: #445; padding: 6px 0; padding-left: 18px; position: relative;
-      border-bottom: 1px solid var(--border);
-    }
-    .exp-bullets li:last-child { border-bottom: none; }
-    .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; top: 8px; }
-
-    .exp-kpis { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-    .kpi {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      padding: 12px 18px;
-      border-radius: 3px;
-    }
-    .kpi .k { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--slate); line-height: 1; }
-    .kpi .k span { color: var(--accent); }
-    .kpi .v { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #889; margin-top: 4px; }
-
-    /* ── CASE STUDIES ───────────────────────────── */
-    #case-studies { background: var(--slate); max-width: 100%; padding: 0; }
-    .cases-inner { max-width: 1200px; margin: 0 auto; padding: 100px 80px; }
-    .cases-inner .section-label { color: var(--gold); }
-    .cases-inner .section-label::after { background: rgba(255,255,255,0.1); }
-    .cases-inner .section-title { color: var(--white); }
-
-    .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-
-    .case-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 6px;
-      padding: 36px 32px;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .case-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
-    .case-card:first-child { grid-column: 1 / -1; }
-
-    .case-tag {
-      display: inline-block;
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(201,150,59,0.35);
-      padding: 4px 10px; border-radius: 2px;
-      margin-bottom: 18px;
-    }
-    .case-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; font-weight: 700;
-      color: var(--white); margin-bottom: 12px;
-    }
-    .case-sub { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
-    .case-desc { font-size: 0.91rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
-    .case-results { display: flex; gap: 16px; flex-wrap: wrap; }
-    .result-badge {
-      font-size: 0.78rem; font-weight: 600;
-      color: var(--gold);
-      background: rgba(201,150,59,0.1);
-      padding: 5px 12px; border-radius: 2px;
-    }
-
-    /* ── EDUCATION ─────────────────────────────── */
-    #education { background: var(--white); max-width: 100%; padding: 0; }
-    .edu-inner { max-width: 1200px; margin: 0 auto; padding: 100px 80px; }
-
-    .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-    .edu-card {
-      background: var(--mist);
-      border: 1px solid var(--border);
-      padding: 32px 28px;
-      border-radius: 4px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .edu-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--gold));
-    }
-    .edu-card:hover { transform: translateY(-4px); }
-    .edu-card .icon { font-size: 1.8rem; margin-bottom: 16px; }
-    .edu-card .deg { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--slate); margin-bottom: 8px; line-height: 1.4; }
-    .edu-card .inst { font-size: 0.82rem; font-weight: 500; color: #667; margin-bottom: 12px; }
-    .edu-card .yr { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-    .edu-card a { color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 600; }
-    .edu-card a:hover { text-decoration: underline; }
-    .edu-card .credly-badge { margin-top: 16px; display: flex; justify-content: center; }
-
-    /* ── CONTACT ───────────────────────────────── */
-    #contact { background: var(--mist); max-width: 100%; padding: 0; }
-    .contact-inner {
-      max-width: 1200px; margin: 0 auto; padding: 100px 80px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
-    }
-
-    .contact-blurb {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem; font-weight: 700;
-      color: var(--slate); line-height: 1.2;
-      margin-bottom: 28px;
-    }
-    .contact-blurb em { font-style: normal; color: var(--accent); }
-
-    .contact-sub { font-size: 1rem; font-weight: 300; line-height: 1.75; color: #556; max-width: 400px; }
-
-    .contact-links { display: flex; flex-direction: column; gap: 18px; padding-top: 12px; }
-    .contact-link {
-      display: flex; align-items: center; gap: 16px;
-      padding: 18px 22px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 500;
-      font-size: 0.92rem;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .contact-link:hover { border-color: var(--accent); transform: translateX(4px); }
-    .contact-link .icon { font-size: 1.2rem; width: 28px; text-align: center; }
-    .contact-link .lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #889; display: block; }
-    .contact-link .val { font-size: 0.91rem; font-weight: 500; color: var(--slate); }
-
-    /* ── FOOTER ────────────────────────────────── */
-    footer {
-      background: var(--ink);
-      padding: 40px 80px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    footer .f-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700; font-size: 1rem;
-      color: rgba(255,255,255,0.5);
-    }
-    footer .f-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
-
-    /* ── FADE-IN ANIMATION ─────────────────────── */
-    .fade-up {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ────────────────────────────── */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 68px; }
-      .hero-left { padding: 60px 28px; }
-      .hero-left::after { display: none; }
-      .hero-right { padding: 0 28px 60px; }
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-      .section { padding: 60px 28px; }
-      .about-inner, .exp-inner, .cases-inner, .edu-inner, .contact-inner { padding: 60px 28px; }
-      .cases-grid { grid-template-columns: 1fr; }
-      .case-card:first-child { grid-column: 1; }
-      .edu-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 28px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="#">Guilebaldo Ruiz Reyes</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#case-studies">Case Studies</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header class="site-nav">
+    <a class="nav-brand" href="/">Guilebaldo<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="/portafolio/">Portfolio</a>
+      <a href="/resume/">Resume</a>
+      <a class="nav-cta" href="#start">Start a project</a>
+    </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left fade-up">
-      <div class="hero-tag">Product Manager · Product Owner</div>
-      <h1 class="hero-name">
-        Guilebaldo<br><em>Ruiz Reyes</em>
-      </h1>
-      <p class="hero-desc">
-        Entrepreneurial leader with 10+ years building products from zero to scale. 
-        Ex-CEO & Co-Founder, IBM AI Product Management certified. 
-        Passionate about <strong>digital transformation</strong>, 
-        AI-powered solutions, and products that drive measurable business results.
-      </p>
-      <div class="hero-cta-group">
-        <a class="btn-primary" href="#case-studies">View Case Studies</a>
-        <a class="btn-ghost" href="#contact">Get in Touch</a>
+  <main>
+    <section class="hero">
+      <div class="hero-visual" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <h1 class="hero-brand">Guilebaldo<span>.</span></h1>
+        <p class="hero-headline">Software products that win customers — not just demos that impress investors.</p>
+        <p class="hero-sub">
+          We design, build, and ship AI-powered web products, SaaS MVPs, and digital platforms for founders and operators who need measurable growth.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/522222554936?text=Hi%20Guilebaldo%20—%20I%20want%20to%20start%20a%20software%20project" target="_blank" rel="noopener">Book a project call</a>
+          <a class="btn btn-ghost" href="/portafolio/">See selected work</a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-item"><strong>10+</strong><span>Years shipping products</span></div>
+          <div class="proof-item"><strong>2×</strong><span>Revenue outcomes delivered</span></div>
+          <div class="proof-item"><strong>4–8</strong><span>Weeks to first usable MVP</span></div>
+          <div class="proof-item"><strong>IBM</strong><span>AI Product certified</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>AI Agents</span><span class="dot">◆</span>
+        <span>SaaS MVPs</span><span class="dot">◆</span>
+        <span>Workflow Automation</span><span class="dot">◆</span>
+        <span>Custom Web Apps</span><span class="dot">◆</span>
+        <span>Tourism Platforms</span><span class="dot">◆</span>
+        <span>Product Strategy</span><span class="dot">◆</span>
+        <span>Conversion-first UX</span><span class="dot">◆</span>
+        <span>API Integrations</span><span class="dot">◆</span>
+        <span>AI Agents</span><span class="dot">◆</span>
+        <span>SaaS MVPs</span><span class="dot">◆</span>
+        <span>Workflow Automation</span><span class="dot">◆</span>
+        <span>Custom Web Apps</span><span class="dot">◆</span>
+        <span>Tourism Platforms</span><span class="dot">◆</span>
+        <span>Product Strategy</span><span class="dot">◆</span>
+        <span>Conversion-first UX</span><span class="dot">◆</span>
+        <span>API Integrations</span><span class="dot">◆</span>
       </div>
     </div>
 
-    <div class="hero-right fade-up" style="transition-delay:0.2s">
-      <div class="profile-frame">
-        <!-- Google Drive direct image embed -->
-        <img
-          class="profile-img"
-          src="https://drive.google.com/thumbnail?id=1Gtc15ciOJWr9cJQSuMq_5OEJbUB6-isO&sz=w400"
-          alt="Guilebaldo Ruiz Reyes"
-          onerror="this.style.background='linear-gradient(135deg,#1c2b3a,#3b82f6)'; this.alt=''; this.style.display='block';"
-        />
-      </div>
-      <div class="hero-stats">
-        <div class="stat-box">
-          <div class="num">10<span>+</span></div>
-          <div class="lbl">Years Experience</div>
-        </div>
-        <div class="stat-box">
-          <div class="num">2<span>×</span></div>
-          <div class="lbl">Revenue Growth</div>
-        </div>
-        <div class="stat-box">
-          <div class="num">3<span>+</span></div>
-          <div class="lbl">Active Ventures</div>
-        </div>
-        <div class="stat-box">
-          <div class="num">IBM<span>✓</span></div>
-          <div class="lbl">AI PM Certified</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="eyebrow reveal">What we build</div>
+        <h2 class="section-title reveal">High-demand products. Clear commercial outcomes.</h2>
+        <p class="section-lead reveal">We focus on the software buyers are paying for right now — AI automation, fast MVPs, and platforms that turn traffic into revenue.</p>
 
-  <!-- MARQUEE -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>Product Roadmap</span><span class="dot">◆</span>
-      <span>Agile / Scrum</span><span class="dot">◆</span>
-      <span>Backlog Management</span><span class="dot">◆</span>
-      <span>AI Product Strategy</span><span class="dot">◆</span>
-      <span>Digital Transformation</span><span class="dot">◆</span>
-      <span>E-commerce Scale</span><span class="dot">◆</span>
-      <span>Data-Driven Decisions</span><span class="dot">◆</span>
-      <span>Cross-Functional Teams</span><span class="dot">◆</span>
-      <span>OKRs & KPIs</span><span class="dot">◆</span>
-      <span>Smart Tourism Tech</span><span class="dot">◆</span>
-      <span>Stakeholder Management</span><span class="dot">◆</span>
-      <!-- duplicated for seamless loop -->
-      <span>Product Roadmap</span><span class="dot">◆</span>
-      <span>Agile / Scrum</span><span class="dot">◆</span>
-      <span>Backlog Management</span><span class="dot">◆</span>
-      <span>AI Product Strategy</span><span class="dot">◆</span>
-      <span>Digital Transformation</span><span class="dot">◆</span>
-      <span>E-commerce Scale</span><span class="dot">◆</span>
-      <span>Data-Driven Decisions</span><span class="dot">◆</span>
-      <span>Cross-Functional Teams</span><span class="dot">◆</span>
-      <span>OKRs & KPIs</span><span class="dot">◆</span>
-      <span>Stakeholder Management</span><span class="dot">◆</span>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <div id="about">
-    <div class="about-inner">
-      <div class="fade-up">
-        <div class="section-label">About Me</div>
-        <h2 class="section-title">Builder. Strategist.<br>Entrepreneur at heart.</h2>
-        <div class="about-text">
-          <p>
-            I'm a <strong>Product Manager and founder</strong> based in Puebla, Mexico, with a decade of experience 
-            building companies, digital products, and operations from the ground up.
-          </p>
-          <p>
-            From scaling a 13-store auto parts chain to e-commerce excellence on Amazon and Mercado Libre, 
-            to co-founding a restaurant + hostel business, my career has been defined by 
-            <strong>end-to-end product ownership</strong> with a relentless focus on outcomes.
-          </p>
-          <p>
-            Now I'm channeling that entrepreneurial drive into Product Management roles — 
-            especially where <strong>AI and automation</strong> can unlock new growth. 
-            Open to remote opportunities worldwide.
-          </p>
+        <div class="services-grid reveal">
+          <article class="service">
+            <div class="service-num">01</div>
+            <h3>AI Agents &amp; Workflow Automation</h3>
+            <p>Autonomous agents and AI workflows that handle support, sales ops, research, and internal processes — so your team ships more with less overhead.</p>
+            <div class="service-tags">
+              <span>AI agents</span>
+              <span>RAG</span>
+              <span>Ops automation</span>
+            </div>
+          </article>
+          <article class="service">
+            <div class="service-num">02</div>
+            <h3>SaaS &amp; MVP Launch</h3>
+            <p>From idea to paying users in weeks. We scope the smallest product that validates demand, then iterate toward product-market fit.</p>
+            <div class="service-tags">
+              <span>MVP in 4–8 weeks</span>
+              <span>Next.js</span>
+              <span>Subscriptions</span>
+            </div>
+          </article>
+          <article class="service">
+            <div class="service-num">03</div>
+            <h3>Conversion-focused Web Products</h3>
+            <p>Marketing sites, booking funnels, and product surfaces engineered to convert — clear offers, proof, and CTAs that move buyers to action.</p>
+            <div class="service-tags">
+              <span>Landing systems</span>
+              <span>CRO</span>
+              <span>Lead gen</span>
+            </div>
+          </article>
+          <article class="service">
+            <div class="service-num">04</div>
+            <h3>Custom Platforms &amp; Integrations</h3>
+            <p>Marketplaces, dashboards, POS-connected tools, and API-first systems that connect the tools your business already runs on.</p>
+            <div class="service-tags">
+              <span>Dashboards</span>
+              <span>APIs</span>
+              <span>Internal tools</span>
+            </div>
+          </article>
         </div>
       </div>
-      <div class="fade-up" style="transition-delay:0.15s">
-        <div class="section-label" style="margin-bottom:20px">Core Skills</div>
-        <div class="skills-grid">
-          <div class="skill-pill">Product Roadmapping</div>
-          <div class="skill-pill">Agile / Scrum / Kanban</div>
-          <div class="skill-pill">Backlog Prioritization</div>
-          <div class="skill-pill">User Story Writing</div>
-          <div class="skill-pill">AI / ML Product Strategy</div>
-          <div class="skill-pill">E-commerce Operations</div>
-          <div class="skill-pill">Data Analytics & KPIs</div>
-          <div class="skill-pill">Stakeholder Alignment</div>
-          <div class="skill-pill">Go-to-Market Strategy</div>
-          <div class="skill-pill">POS Systems & SaaS</div>
-          <div class="skill-pill">Cross-functional Leadership</div>
-          <div class="skill-pill">Spanish & English (Bilingual)</div>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- EXPERIENCE -->
-  <div id="experience">
-    <div class="exp-inner">
-      <div class="section-label fade-up">Experience</div>
-      <h2 class="section-title fade-up">A track record of<br>building and scaling.</h2>
+    <section class="section" id="work" style="padding-top:0">
+      <div class="wrap">
+        <div class="eyebrow reveal">Selected work</div>
+        <h2 class="section-title reveal">Products in market. Results you can click.</h2>
+        <p class="section-lead reveal">Live platforms for tourism and service businesses — built end-to-end from strategy to launch.</p>
 
-      <div class="timeline">
-
-        <div class="exp-item fade-up">
-          <div class="exp-meta">
-            <div class="exp-role">Director of Technology & Digital Innovation</div>
-            <div class="exp-period">Apr 2026 — Present</div>
-          </div>
-          <div class="exp-company">
-            <a href="https://barriandopuebla.com" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">Barriando – Puebla Tourist Cluster</a>
-            · Puebla, Mexico
-          </div>
-          <ul class="exp-bullets">
-            <li>Spearhead all technology and digital transformation initiatives for Puebla's premier tourism cluster, reporting directly to the General Director.</li>
-            <li>Designed, developed, and launched the official <a href="https://barriandopuebla.com" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;">BarriandoPuebla.com</a> website — the digital hub for the Puebla tourism ecosystem.</li>
-            <li>Conceptualized and built innovative digital tourism products: <a href="https://www.barriandopuebla.com/map" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:600;"><strong>MAP</strong></a> (Museo Abierto de Puebla) and a <strong>swipe-based coupon platform</strong> that lets visitors discover and save local experiences Tinder-style.</li>
-            <li>Drive user-centered digital solutions that boost visitor engagement, support local businesses, and position Puebla as a leading smart tourism destination.</li>
-          </ul>
-          <div class="exp-kpis">
-            <div class="kpi"><div class="k"><span>1</span></div><div class="v">Website Launched</div></div>
-            <div class="kpi"><div class="k"><span>2</span>+</div><div class="v">Digital Products</div></div>
-            <div class="kpi"><div class="k">C<span>-1</span></div><div class="v">Reports to GM</div></div>
-          </div>
+        <div class="work-list">
+          <a class="work-row reveal" href="/portafolio/#barriando">
+            <div>
+              <h3>Barriando</h3>
+              <p>Digital hub and tourism products for Puebla’s historic-center cluster — website, open museum (MAP), and engagement tools.</p>
+            </div>
+            <div class="work-meta">Tourism platform · Live</div>
+            <div class="work-arrow" aria-hidden="true">→</div>
+          </a>
+          <a class="work-row reveal" href="/portafolio/#soil-force">
+            <div>
+              <h3>Soil Force</h3>
+              <p>Conversion-led marketing site and product exploration for organic lawn care in San Antonio — estimates, trust, and service booking.</p>
+            </div>
+            <div class="work-meta">Local services · Live</div>
+            <div class="work-arrow" aria-hidden="true">→</div>
+          </a>
         </div>
 
-        <div class="exp-item fade-up">
-          <div class="exp-meta">
-            <div class="exp-role">Co-Founder & General Manager</div>
-            <div class="exp-period">Mar 2021 — Present</div>
-          </div>
-          <div class="exp-company">Cosme Tortas — Restaurant + Hostel · Puebla, Mexico</div>
-          <ul class="exp-bullets">
-            <li>Owned full product lifecycle and roadmap, from concept to profitable operation.</li>
-            <li>Managed backlog prioritization, agile ceremonies, and cross-functional delivery across kitchen, service, and hospitality teams.</li>
-            <li>Implemented integrated POS systems with custom analytics dashboards for operational excellence and real-time decision making.</li>
-            <li>Defined and tracked OKRs and growth KPIs; drove consistent iteration toward +100% revenue growth.</li>
-          </ul>
-          <div class="exp-kpis">
-            <div class="kpi"><div class="k">+<span>100</span>%</div><div class="v">Revenue Growth</div></div>
-            <div class="kpi"><div class="k"><span>2</span>ops</div><div class="v">Units Managed</div></div>
-            <div class="kpi"><div class="k"><span>∞</span></div><div class="v">Full Ownership</div></div>
-          </div>
-        </div>
-
-        <div class="exp-item fade-up">
-          <div class="exp-meta">
-            <div class="exp-role">E-Commerce & Strategic Planning Lead</div>
-            <div class="exp-period">Jan 2016 — Jan 2021</div>
-          </div>
-          <div class="exp-company">LCH Autopartes — 13-Store Chain, 50+ Employees · Chiapas, Mexico</div>
-          <ul class="exp-bullets">
-            <li>Launched and scaled e-commerce operations on Mercado Libre and Amazon from zero to multiple Platinum-level accounts.</li>
-            <li>Owned product roadmap, feature prioritization, and data-driven growth initiatives across digital channels.</li>
-            <li>Led cross-functional teams and designed process automation workflows that eliminated manual bottlenecks at scale.</li>
-            <li>Drove digital revenue to parity with physical store revenue in under 12 months from launch.</li>
-          </ul>
-          <div class="exp-kpis">
-            <div class="kpi"><div class="k"><span>0</span>→Pt</div><div class="v">Amazon / ML Level</div></div>
-            <div class="kpi"><div class="k"><span>&lt;</span>12m</div><div class="v">Breakeven to Parity</div></div>
-            <div class="kpi"><div class="k">50<span>+</span></div><div class="v">Team Members</div></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- CASE STUDIES -->
-  <div id="case-studies">
-    <div class="cases-inner">
-      <div class="section-label fade-up">Case Studies</div>
-      <h2 class="section-title fade-up">Problems solved,<br>products shipped.</h2>
-
-      <div class="cases-grid">
-
-        <div class="case-card fade-up">
-          <div class="case-tag">Digital Transformation · E-commerce</div>
-          <div class="case-title">Zero-to-Platinum E-commerce Platform Launch</div>
-          <div class="case-sub">LCH Autopartes · 2016–2021</div>
-          <p class="case-desc">
-            Defined and executed the end-to-end product strategy to build LCH's digital sales operation from scratch. 
-            Identified the market opportunity, structured the backlog, led a cross-functional team, 
-            and iterated rapidly on catalog management, pricing automation, and fulfillment workflows. 
-            Achieved Platinum seller status on both Amazon and Mercado Libre within the first year.
-          </p>
-          <div class="case-results">
-            <span class="result-badge">📦 Platinum status on Amazon & ML</span>
-            <span class="result-badge">⚡ Digital → physical revenue parity in &lt;12 months</span>
-            <span class="result-badge">🤖 Large-scale data automation</span>
-          </div>
-        </div>
-
-        <div class="case-card fade-up">
-          <div class="case-tag">Operations Product · POS & Analytics</div>
-          <div class="case-title">Integrated POS & Dashboard System</div>
-          <div class="case-sub">Cosme Tortas · 2021–Present</div>
-          <p class="case-desc">
-            Designed and delivered the product roadmap for restaurant and hostel operations. 
-            Implemented a custom POS integrated with analytics dashboards — 
-            translating operational data into actionable insights for staffing, inventory, and revenue optimization.
-          </p>
-          <div class="case-results">
-            <span class="result-badge">📊 Real-time operational dashboards</span>
-            <span class="result-badge">💰 +100% revenue growth</span>
-            <span class="result-badge">⚙️ Streamlined team workflows</span>
-          </div>
-        </div>
-
-        <div class="case-card fade-up">
-          <div class="case-tag">Coming Soon · AI Product</div>
-          <div class="case-title">Satellite-Based Property Quoting Platform</div>
-          <div class="case-sub">Soil Force · San Antonio, TX · 2024–Present</div>
-          <p class="case-desc">
-            Exploring the feasibility of a satellite imagery + computer vision pipeline 
-            to automate material estimation and quoting for lawn care services. 
-            Combining Google Maps API polygon measurement with image recognition to generate 
-            instant, accurate property quotes at scale.
-          </p>
-          <div class="case-results">
-            <span class="result-badge">🛰 Google Maps API + CV</span>
-            <span class="result-badge">🌿 Lawn care automation</span>
-            <span class="result-badge">🔬 In feasibility phase</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <div id="education">
-    <div class="edu-inner">
-      <div class="section-label fade-up">Education & Certifications</div>
-      <h2 class="section-title fade-up">Always learning.<br>Always building.</h2>
-
-      <div class="edu-grid">
-
-        <div class="edu-card fade-up">
-          <div class="icon">🎓</div>
-          <div class="deg">Master's in Executive Management of Hotels & Restaurants</div>
-          <div class="inst">ISU Universidad</div>
-          <div class="yr">April 2025 - July 2026 · GPA 10/10</div>
-        </div>
-
-        <div class="edu-card fade-up" style="transition-delay:0.1s">
-          <div class="icon">📐</div>
-          <div class="deg">BA in Business Creation & Development</div>
-          <div class="inst">Tecnológico de Monterrey</div>
-          <div class="yr">2009 – 2013 · GPA 89/100</div>
-        </div>
-
-        <div class="edu-card fade-up" style="transition-delay:0.2s">
-          <div class="icon">🤖</div>
-          <div class="deg">IBM AI Product Management Professional Certificate</div>
-          <div class="inst">Coursera / IBM</div>
-          <div class="yr"><a href="https://www.coursera.org/account/accomplishments/specialization/B4C5P6VILILN" target="_blank">View Certificate ↗</a></div>
-          <div class="credly-badge" data-iframe-width="150" data-iframe-height="270" data-share-badge-id="07272a61-1c86-44d0-b12d-b9034fce053c" data-share-badge-host="https://www.credly.com"></div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div id="contact">
-    <div class="contact-inner">
-      <div class="fade-up">
-        <div class="section-label">Contact</div>
-        <div class="contact-blurb">Let's build<br>something <em>great</em><br>together.</div>
-        <p class="contact-sub">
-          Open to Product Manager and Product Owner opportunities worldwide. 
-          Based in Puebla, Mexico — available for remote roles and ambitious teams.
+        <p style="margin-top:28px" class="reveal">
+          <a class="btn btn-ghost" href="/portafolio/">View full portfolio</a>
         </p>
       </div>
-      <div class="contact-links fade-up" style="transition-delay:0.15s">
-        <a class="contact-link" href="mailto:guilebaldoruiz@gmail.com">
-          <span class="icon">✉️</span>
-          <span>
-            <span class="lbl">Email</span>
-            <span class="val">guilebaldoruiz@gmail.com</span>
-          </span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/guilebaldoruiz/" target="_blank">
-          <span class="icon">💼</span>
-          <span>
-            <span class="lbl">LinkedIn</span>
-            <span class="val">linkedin.com/in/guilebaldoruiz</span>
-          </span>
-        </a>
-        <a class="contact-link" href="tel:+522222554936">
-          <span class="icon">📞</span>
-          <span>
-            <span class="lbl">Phone / WhatsApp</span>
-            <span class="val">+52 222 255 4936</span>
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span class="f-logo">Guilebaldo Ruiz Reyes</span>
-    <span class="f-copy">Puebla, Mexico · Available worldwide</span>
+    <section class="section offer" id="process">
+      <div class="wrap">
+        <div class="eyebrow reveal">How engagement works</div>
+        <h2 class="section-title reveal">A process built to close risk — then ship.</h2>
+        <p class="section-lead reveal">No endless discovery. We align on outcomes, build the smallest valuable release, and measure what converts.</p>
+
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="n">01</div>
+            <h3>Scope call</h3>
+            <p>30–45 minutes. We clarify the goal, users, constraints, and what “done” means commercially.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="n">02</div>
+            <h3>Fixed proposal</h3>
+            <p>Clear deliverables, timeline, and investment. You know what ships before we write a line of code.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="n">03</div>
+            <h3>Build in public sprints</h3>
+            <p>Weekly demos. Working software early. Adjustments based on real feedback, not slide decks.</p>
+          </div>
+          <div class="process-step reveal">
+            <div class="n">04</div>
+            <h3>Launch &amp; iterate</h3>
+            <p>Go live, instrument conversion, and keep improving the loops that drive revenue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:0">
+      <div class="wrap">
+        <div class="eyebrow reveal">Popular engagements</div>
+        <h2 class="section-title reveal">Packages teams book most often.</h2>
+        <div class="offer-grid">
+          <div class="offer-item reveal">
+            <h3>Sprint MVP</h3>
+            <p>A focused 4–8 week build to validate an idea with real users — auth, core flow, payments or leads, and analytics.</p>
+          </div>
+          <div class="offer-item reveal">
+            <h3>AI Ops Agent</h3>
+            <p>An agent or automation stack for support, quoting, research, or internal ops — connected to your existing tools.</p>
+          </div>
+          <div class="offer-item reveal">
+            <h3>Growth Site System</h3>
+            <p>High-converting marketing site + lead capture + CRM/WhatsApp handoff. Built to turn attention into booked calls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cred">
+      <div class="wrap cred-inner">
+        <div class="reveal">
+          <div class="eyebrow">Why Guilebaldo</div>
+          <h2 class="section-title">Founder-led engineering with product ownership baked in.</h2>
+          <p class="section-lead">You work directly with an operator who has scaled businesses, shipped e-commerce to Platinum, and built tourism tech in production — not a handoff across three account managers.</p>
+          <p style="margin-top:28px">
+            <a class="btn btn-light" href="/resume/">Read the founder resume</a>
+          </p>
+        </div>
+        <ul class="cred-points reveal">
+          <li>End-to-end ownership: strategy, UX, engineering, and launch.</li>
+          <li>IBM AI Product Management certified — AI features designed for outcomes, not novelty.</li>
+          <li>Bilingual delivery (English / Spanish) for US and LatAm teams.</li>
+          <li>Bias to shipping: working software every week, commercial metrics from day one.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-band" id="start">
+      <div class="wrap reveal">
+        <div class="eyebrow" style="justify-content:center">Start a project</div>
+        <h2 class="section-title">Have a product to ship? Let’s map the fastest path to revenue.</h2>
+        <p class="section-lead">Message on WhatsApp or email. You’ll get a clear next step within one business day — usually a short scope call.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://wa.me/522222554936?text=Hi%20Guilebaldo%20—%20I%20want%20to%20start%20a%20software%20project" target="_blank" rel="noopener">WhatsApp · Book a call</a>
+          <a class="btn btn-dark" href="mailto:guilebaldoruiz@gmail.com?subject=Project%20inquiry%20—%20Guilebaldo">Email the studio</a>
+        </div>
+        <p class="cta-note">Typical response under 24 hours · Puebla, Mexico · Remote worldwide</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="/">Guilebaldo</a>
+    <nav>
+      <a href="/portafolio/">Portfolio</a>
+      <a href="/resume/">Resume</a>
+      <a href="mailto:guilebaldoruiz@gmail.com">Email</a>
+      <a href="https://wa.me/522222554936" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/guilebaldoruiz/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <span>© <span id="y"></span> Guilebaldo · Software studio</span>
   </footer>
 
-  <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
   <script>
-    // Fade-up on scroll
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById("navToggle");
+    const links = document.getElementById("navLinks");
+    toggle.addEventListener("click", () => links.classList.toggle("open"));
+    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Trigger hero immediately
-    document.querySelectorAll('.hero .fade-up').forEach(el => {
-      setTimeout(() => el.classList.add('visible'), 100);
-    });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
   </script>
-
 </body>
 </html>
