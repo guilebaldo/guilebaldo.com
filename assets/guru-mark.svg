@@ -15,7 +15,8 @@
     stroke="#000000"
     stroke-width="3.6"
     stroke-linecap="round"
-    stroke-linejoin="round"
+    stroke-linejoin="miter"
+    stroke-miterlimit="8"
   />
   <!-- Center node -->
   <circle cx="50" cy="50" r="5.2" stroke="#000000" stroke-width="3.2"/>
