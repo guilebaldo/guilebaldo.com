@@ -91,11 +91,15 @@ body::before {
   object-fit: contain;
 }
 
+.hero-brand .brand-lockup {
+  align-items: flex-start;
+}
+
 .hero-brand .brand-mark {
-  width: 0.42em;
-  height: 0.42em;
-  margin-top: 0.12em;
-  margin-left: 0.06em;
+  width: 0.38em;
+  height: 0.38em;
+  margin-top: 0.14em;
+  margin-left: 0.04em;
 }
 
 .site-footer .brand {
