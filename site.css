@@ -67,11 +67,52 @@ body::before {
   line-height: 1;
 }
 
-.nav-brand .brand-name {
+.brand-lockup {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.12em;
+}
+
+.nav-brand .brand-name,
+.brand-name {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.35rem;
   letter-spacing: -0.04em;
+}
+
+.brand-mark {
+  width: 0.78em;
+  height: 0.78em;
+  margin-top: 0.06em;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: top;
+  object-fit: contain;
+}
+
+.hero-brand .brand-mark {
+  width: 0.42em;
+  height: 0.42em;
+  margin-top: 0.12em;
+  margin-left: 0.06em;
+}
+
+.site-footer .brand {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.14em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.site-footer .brand .brand-mark {
+  width: 0.85em;
+  height: 0.85em;
+  margin-top: 0.05em;
+  filter: invert(1);
 }
 
 .nav-brand .brand-sub {
@@ -785,13 +826,6 @@ body::before {
   gap: 16px;
   align-items: center;
   justify-content: space-between;
-}
-
-.site-footer .brand {
-  font-family: var(--font-display);
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
 }
 
 .site-footer nav {
