@@ -118,6 +118,40 @@ body::before {
   transform: translateY(-1px);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 2px;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--muted) !important;
+}
+
+.lang-switch a.is-active {
+  background: var(--ink);
+  color: var(--white) !important;
+}
+
+.lang-switch a:not(.is-active):hover {
+  color: var(--ink) !important;
+}
+
 .nav-toggle {
   display: none;
   background: none;

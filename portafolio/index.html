@@ -6,6 +6,9 @@
   <title>Portfolio — GURU</title>
   <meta name="description" content="Selected software projects by GURU: Barriando tourism platform, Soil Force service business site, and more.">
   <link rel="canonical" href="https://guilebaldo.com/portafolio/">
+  <link rel="alternate" hreflang="en" href="https://guilebaldo.com/portafolio/">
+  <link rel="alternate" hreflang="es-MX" href="https://guilebaldo.com/es/portafolio/">
+  <link rel="alternate" hreflang="x-default" href="https://guilebaldo.com/portafolio/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
@@ -20,6 +23,10 @@
       <a href="/#services">Services</a>
       <a class="is-active" href="/portafolio/">Portfolio</a>
       <a href="/resume/">Resume</a>
+      <div class="lang-switch" aria-label="Language">
+        <a href="/portafolio/" class="is-active" hreflang="en" lang="en">EN</a>
+        <a href="/es/portafolio/" hreflang="es" lang="es">ES</a>
+      </div>
       <a class="nav-cta" href="/#start">Start a project</a>
     </nav>
   </header>
@@ -110,16 +117,6 @@
     <span>© <span id="y"></span> GURU</span>
   </footer>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    const toggle = document.getElementById("navToggle");
-    const links = document.getElementById("navLinks");
-    toggle.addEventListener("click", () => links.classList.toggle("open"));
-    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-  </script>
+  <script src="/site.js"></script>
 </body>
 </html>
