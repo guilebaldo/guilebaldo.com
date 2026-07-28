@@ -112,9 +112,9 @@ body::before {
 .nav-brand .brand-name,
 .brand-name {
   font-family: var(--font-brand);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.35rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .brand-mark {
@@ -143,7 +143,8 @@ body::before {
   align-items: flex-start;
   gap: 0.14em;
   font-family: var(--font-brand);
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
 }
@@ -465,10 +466,10 @@ html[data-theme="dark"] .btn-ghost:hover {
 
 .hero-brand {
   font-family: var(--font-brand);
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(3.8rem, 11vw, 8rem);
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
   color: var(--ink);
   margin-bottom: 10px;
 }
