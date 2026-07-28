@@ -21,6 +21,7 @@
   --resume-hero-base: linear-gradient(165deg, #e8edf3 0%, #f5f7fa 50%, #e6ecef 100%);
   --noise-opacity: 0.35;
   --font-display: "Syne", sans-serif;
+  --font-brand: "Lexend", sans-serif;
   --font-body: "Figtree", sans-serif;
   --radius: 4px;
   --max: 1120px;
@@ -110,10 +111,10 @@ body::before {
 
 .nav-brand .brand-name,
 .brand-name {
-  font-family: var(--font-display);
+  font-family: var(--font-brand);
   font-weight: 800;
   font-size: 1.35rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .brand-mark {
@@ -141,7 +142,7 @@ body::before {
   display: inline-flex;
   align-items: flex-start;
   gap: 0.14em;
-  font-family: var(--font-display);
+  font-family: var(--font-brand);
   font-weight: 800;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
@@ -463,10 +464,10 @@ html[data-theme="dark"] .btn-ghost:hover {
 }
 
 .hero-brand {
-  font-family: var(--font-display);
+  font-family: var(--font-brand);
   font-weight: 800;
   font-size: clamp(3.8rem, 11vw, 8rem);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   line-height: 0.9;
   color: var(--ink);
   margin-bottom: 10px;
