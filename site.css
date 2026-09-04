@@ -1497,10 +1497,23 @@ html[data-theme="dark"] .service-tags span {
 
 .edu-card a:hover { text-decoration: underline; }
 
+.badges-block {
+  margin-top: 56px;
+}
+
+.credly-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 16px;
+  margin-top: 28px;
+}
+
 .credly-badge {
-  margin-top: 16px;
   display: flex;
   justify-content: center;
+  width: 150px;
+  min-height: 270px;
 }
 
 .contact-grid {
